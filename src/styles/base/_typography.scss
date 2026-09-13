@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text;
+}
+
+p {
+  color: $muted;
+}
+
+.prose {
+  color: $muted;
+  font-size: 1.04rem;
+
+  p {
+    margin: 0 0 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  strong {
+    color: $text;
+  }
+}

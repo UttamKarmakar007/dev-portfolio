@@ -1,0 +1,760 @@
+@use "../abstracts" as *;
+
+
+/* ========================================
+   About Section
+======================================== */
+
+.about-section {
+  position: relative;
+  overflow: hidden;
+
+  background: $bg;
+  border-top: 1px solid $line;
+}
+
+
+/* Background Glow */
+
+.about-section::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  right: -220px;
+
+  width: 620px;
+  height: 620px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(101, 255, 179, 0.045),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   Main Layout
+======================================== */
+
+.about-grid {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+}
+
+
+/* ========================================
+   About Content
+======================================== */
+
+.about-content {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* ========================================
+   About Title
+======================================== */
+
+.about-title {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 18px 0 0;
+
+  color: $text;
+
+  font-size: clamp(
+    2.8rem,
+    4.7vw,
+    4.5rem
+  );
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+/* ========================================
+   About Description
+======================================== */
+
+.about-copy {
+  width: 100%;
+  max-width: none;
+
+  margin-top: 36px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: clamp(
+    50px,
+    7vw,
+    100px
+  );
+
+  p {
+    width: 100%;
+
+    margin: 0;
+
+    color: $muted;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+}
+
+
+/* ========================================
+   Capabilities Panel
+======================================== */
+
+.about-capabilities {
+  position: relative;
+
+  width: 100%;
+  max-width: none;
+
+  margin-top: 70px;
+
+  padding: 34px;
+
+  border: 1px solid $line;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.018),
+      rgba(255, 255, 255, 0.004)
+    ),
+    $surface;
+
+  box-shadow:
+    0 35px 80px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+/* Top Accent */
+
+.about-capabilities::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 30px;
+
+  width: 90px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      $accent,
+      transparent
+    );
+}
+
+
+/* ========================================
+   Capabilities Header
+======================================== */
+
+.about-capabilities__header {
+  margin-bottom: 26px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 20px;
+
+  h3 {
+    margin: 6px 0 0;
+
+    color: $text;
+
+    font-size: 1.3rem;
+
+    font-weight: 650;
+
+    letter-spacing: -0.025em;
+  }
+}
+
+
+.about-capabilities__eyebrow {
+  color: $accent;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  font-size: 0.67rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.09em;
+}
+
+
+/* ========================================
+   Counter
+======================================== */
+
+.about-capabilities__counter {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 4px;
+
+  color: $muted;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  font-size: 0.72rem;
+
+  span:first-child {
+    color: $accent;
+
+    font-size: 1rem;
+  }
+}
+
+
+/* ========================================
+   Cards
+======================================== */
+
+.about-capabilities__cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* ========================================
+   Capability Card
+======================================== */
+
+.about-capability {
+  position: relative;
+
+  height: 210px;
+
+  padding: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border: 1px solid $line;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.005)
+    ),
+    $surface-2;
+
+  transition:
+    border-color $ease,
+    background $ease,
+    transform $ease;
+
+  &:hover {
+    border-color:
+      rgba(101, 255, 179, 0.22);
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(101, 255, 179, 0.025),
+        rgba(255, 255, 255, 0.004)
+      ),
+      $surface-2;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+/* ========================================
+   Featured Card
+======================================== */
+
+.about-capability--featured {
+  border-color:
+    rgba(101, 255, 179, 0.25);
+
+  background:
+    linear-gradient(
+      150deg,
+      rgba(101, 255, 179, 0.09),
+      rgba(101, 255, 179, 0.015) 55%
+    ),
+    $surface-2;
+}
+
+
+.about-capability--featured::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -90px;
+  bottom: -90px;
+
+  border: 1px solid
+    rgba(101, 255, 179, 0.08);
+
+  border-radius: 50%;
+}
+
+
+.about-capability--featured::after {
+  content: "";
+
+  position: absolute;
+
+  width: 115px;
+  height: 115px;
+
+  right: -57px;
+  bottom: -57px;
+
+  border: 1px solid
+    rgba(101, 255, 179, 0.06);
+
+  border-radius: 50%;
+}
+
+
+/* ========================================
+   Card Top
+======================================== */
+
+.about-capability__top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.about-capability__number {
+  color: $accent;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  font-size: 0.73rem;
+
+  letter-spacing: 0.08em;
+}
+
+
+.about-capability__dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: $accent;
+
+  box-shadow:
+    0 0 12px
+    rgba(101, 255, 179, 0.75);
+}
+
+
+/* ========================================
+   Card Content
+======================================== */
+
+.about-capability__content {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.about-capability__label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: $muted;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  font-size: 0.66rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.09em;
+}
+
+
+.about-capability__content h3 {
+  max-width: 420px;
+
+  margin: 0;
+
+  color: $text;
+
+  font-size: clamp(
+    1.3rem,
+    2vw,
+    1.75rem
+  );
+
+  line-height: 1.12;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* ========================================
+   Capability Slider
+======================================== */
+
+.about-capability-slider {
+  min-width: 0;
+}
+
+
+.about-capability-slider__viewport {
+  height: 210px;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+}
+
+
+.about-capability-slider__track {
+  height: 100%;
+
+  transition:
+    transform
+    550ms
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.about-capability-slider__slide {
+  height: 100%;
+}
+
+
+.about-capability-slider__slide
+.about-capability {
+  height: 100%;
+}
+
+
+/* ========================================
+   Previous / Next Controls
+======================================== */
+
+.about-capabilities__controls {
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.about-control {
+  min-height: 40px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid $line;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: $muted;
+
+  font-family: inherit;
+
+  font-size: 0.78rem;
+
+  cursor: pointer;
+
+  transition:
+    color $ease,
+    background $ease,
+    border-color $ease,
+    transform $ease;
+
+  &:hover {
+    color: $text;
+
+    border-color:
+      rgba(101, 255, 179, 0.25);
+
+    background:
+      rgba(101, 255, 179, 0.04);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+
+/* Next Button */
+
+.about-control--next {
+  border-color:
+    rgba(101, 255, 179, 0.35);
+
+  background: $accent;
+
+  color: $bg;
+
+  font-weight: 650;
+
+  &:hover {
+    color: $bg;
+
+    border-color: $accent;
+
+    background: $accent;
+
+    transform: translateY(-1px);
+  }
+}
+
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 900px) {
+
+  .about-title {
+    font-size: clamp(
+      2.7rem,
+      7vw,
+      4rem
+    );
+  }
+
+  .about-copy {
+    gap: 40px;
+  }
+
+  .about-capabilities {
+    margin-top: 60px;
+
+    padding: 28px;
+  }
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 760px) {
+
+  .about-title {
+    font-size: clamp(
+      2.4rem,
+      11vw,
+      3.5rem
+    );
+  }
+
+
+  .about-copy {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .about-capabilities {
+    margin-top: 50px;
+
+    padding: 20px;
+  }
+
+
+  .about-capabilities__header {
+    align-items: center;
+  }
+
+
+  .about-capabilities__cards {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about-capability {
+    height: 190px;
+
+    padding: 22px;
+  }
+
+
+  .about-capability-slider__viewport {
+    height: 190px;
+  }
+
+
+  .about-capabilities__controls {
+    justify-content: stretch;
+  }
+
+
+  .about-control {
+    flex: 1;
+  }
+}
+
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media (max-width: 480px) {
+
+  .about-capabilities {
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+
+  .about-capabilities__header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+
+  .about-capabilities__counter {
+    align-self: flex-end;
+  }
+
+
+  .about-capability {
+    height: 175px;
+  }
+
+
+  .about-capability-slider__viewport {
+    height: 175px;
+  }
+
+
+  .about-capability__content h3 {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-capability-slider__track {
+    transition: none;
+  }
+
+
+  .about-capability {
+    transition: none;
+  }
+}

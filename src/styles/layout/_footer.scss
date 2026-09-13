@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.site-footer {
+  border-top: 1px solid $line;
+  background: $bg;
+}
+
+.site-footer__inner {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: $muted;
+  font-size: 0.78rem;
+}
+
+.site-footer__code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}

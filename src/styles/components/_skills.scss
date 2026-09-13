@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+.skills-section {
+  position: relative;
+  background: $bg;
+}
+
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.skill-groups__item {
+  min-width: 0;
+  display: flex;
+}
+
+@media (max-width: 760px) {
+  .skill-groups {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

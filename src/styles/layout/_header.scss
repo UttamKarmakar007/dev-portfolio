@@ -1,0 +1,37 @@
+@use "../abstracts" as *;
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  border-bottom: 1px solid transparent;
+  transition: background $ease, border-color $ease;
+
+  &.is-scrolled {
+    background: rgba(8, 11, 13, 0.88);
+    backdrop-filter: blur(18px);
+    border-color: $line;
+  }
+}
+
+.site-header__inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.site-brand__mark {
+  color: $accent;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
