@@ -130,9 +130,8 @@ npm run preview
 
 The workflow in `.github/workflows/deploy-pages.yml` builds and publishes the site whenever a commit is pushed to `main`.
 
-1. In the GitHub repository, open **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Push the changes to `main`. After the **Deploy to GitHub Pages** workflow succeeds, the site will be available at `https://uttamkarmakar007.github.io/dev-portfolio/`.
+1. In the GitHub repository, open **Settings → Pages** and enable Pages by setting **Build and deployment → Source** to **GitHub Actions**. Do this before running the workflow; otherwise **Configure Pages** fails with `Get Pages site failed: Not Found`.
+2. Push the changes to `main` (or rerun **Deploy to GitHub Pages** from the **Actions** tab). After the workflow succeeds, the site will be available at `https://uttamkarmakar007.github.io/dev-portfolio/`.
 
 The workflow sets Vite's base path to `/dev-portfolio/` for this repository. Local builds and Netlify builds keep the default `/` path. If the repository is renamed or a custom domain is used, update `PAGES_BASE_PATH` in the workflow (`/` for a custom domain).
 
