@@ -126,6 +126,16 @@ Preview it locally with:
 npm run preview
 ```
 
+## Deploy to GitHub Pages
+
+The workflow in `.github/workflows/deploy-pages.yml` builds and publishes the site whenever a commit is pushed to `main`.
+
+1. In the GitHub repository, open **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push the changes to `main`. After the **Deploy to GitHub Pages** workflow succeeds, the site will be available at `https://uttamkarmakar007.github.io/dev-portfolio/`.
+
+The workflow sets Vite's base path to `/dev-portfolio/` for this repository. Local builds and Netlify builds keep the default `/` path. If the repository is renamed or a custom domain is used, update `PAGES_BASE_PATH` in the workflow (`/` for a custom domain).
+
 ## Deploy to Netlify
 
 This React version can be deployed to Netlify.
